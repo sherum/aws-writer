@@ -1,0 +1,64 @@
+<!--<h4>Plot List</h4>-->
+
+
+
+
+<!--<button class="btn btn-sm btn-outline-primary  my-2" [routerLink]="['/plots',0,'edit']">New</button>-->
+<!--<div class="row gx-5">-->
+<!--<div class="col-md-4">-->
+
+
+<!--  <div *ngIf="plots$ | async as plots">-->
+<!--<table class="table table-light table-hover table-group-divider align-middle table align-middle table-bordered">-->
+<!--  <thead>-->
+<!--  <tr>-->
+<!--    <th>Name</th>-->
+<!--    <th>Plot Type</th>-->
+<!--    <th>Description</th>-->
+<!--    <th>Parent</th>-->
+
+        <!--  <th>Plots</th>-->
+    <!--  <th>Scenes</th>-->
+    <!--  <th>People</th>-->
+    <!--  <th>Events</th>-->
+    <!--  <th>plots</th>-->
+    <!--  <th>Things</th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody class="vertical-align: bottom">-->
+<!--  <tr *ngFor="let plot of plots">-->
+<!--    <td><button class="nav-link link-primary" (click)="selectedPlot(plot.id)">{{plot.name}}</button></td>-->
+<!--    <td>{{plot.plotType}}</td>-->
+<!--    <td>{{plot.description}} </td>-->
+<!--    <td>{{plot.parent}}   </td>-->
+    <!--    Calculated fields
+    <td>{{plot.Plots}}<td>-->
+      <!--    <td>{{plot.Scenes}}<td>-->
+      <!--    <td>{{plot.People}}<td>-->
+      <!--    <td>{{plot.Events}}<td>-->
+      <!--    <td>{{plot.plots}}<td>-->
+      <!--    <td>{{plot.Things}}<td>-->
+<!--  </tr>-->
+<!--</div>-->
+<!--  </tbody>-->
+<!--</table>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<router-outlet></router-outlet>-->
+
+<!--<div class="col-md-8">-->
+<!--  <div *ngIf="plotSelected">-->
+<!--    <app-plot [plot]="selected"-->
+<!--    (plotEmitter)="savePlot($event)"></app-plot>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--</div>-->
+<button class="link-primary rounded  my-2" (click)="create()" data-bs-toggle="tooltip" data-bs-placement="top" title="Create New Plot">Plots</button>
+
+ <div *ngIf="plots$ | async as plots">
+ <div class="list-group" *ngFor="let plot of plots">
+   <a class="list-group-item list-group-item-action my-1" (click)="select(plot.id)">{{plot.name}}</a>
+ </div>

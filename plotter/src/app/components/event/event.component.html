@@ -1,0 +1,45 @@
+<div class="col-md-6">
+<!--<div *ngIf="plot$ |async as scene">-->
+<div *ngIf="event">
+<form class="form" #form="ngForm">
+        <div class="row">
+            <div class="col-md-4">
+            <div class=".form-floating">
+                <label for="name">Event Name</label>
+                <input class="form-control"
+                       type="text"
+                       required
+                       id="name"
+                       placeholder="name of person"
+                       name="name"
+                      #name
+                [(ngModel)] ="event.name"/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class=".form-floating">
+              <label for="dtg">Event Date</label>
+              <input class="form-control"
+                     type="date"
+                     id="dtg"
+                     placeholder="name of scene"
+                     name="dtg"
+                     #dtg
+                     [(ngModel)]="event.date"/>
+            </div>
+          </div>
+        </div>
+
+          <div class="col-md-12">
+            <label for="eventsummary">Event Summary</label>
+            <textarea #eventsummary
+                      class="form-control"
+                      placeholder="description of event"
+                      id="eventsummary"
+                      name="eventsummary"
+                      [(ngModel)]="event.description"
+            ></textarea>
+          </div>
+</form>
+</div>
+</div>

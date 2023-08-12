@@ -1,0 +1,72 @@
+<h4>Scene</h4>
+
+<div class="row">
+
+  <div class="col-md-6">
+    <!--<div *ngIf="plot$ |async as scene">-->
+    <div *ngIf="scene">
+      <form class="form" #form="ngForm">
+        <div class="row">
+
+          <div class="col-md-4">
+
+            <div class=".form-floating">
+              <label for="linkedplot">Linked Plot</label>
+              <input class="form-control"
+                     type="text"
+                     required
+                     id="linkedplot"
+                     placeholder="placeholder for select"
+                     name="linkedplot"
+                     #linkedplot
+                     [(ngModel)]="scene.linkedPlot"/>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class=".form-floating">
+              <label for="name">Scene Name</label>
+              <input class="form-control"
+                     type="text"
+                     required
+                     id="name"
+                     placeholder="name of scene"
+                     name="name"
+                     #name
+                     [(ngModel)]="scene.name"/>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class=".form-floating">
+              <label for="dtg">Scene Date</label>
+              <input class="form-control"
+                     type="date"
+                     id="dtg"
+                     placeholder="name of scene"
+                     name="dtg"
+                     #dtg
+                     [(ngModel)]="scene.date"/>
+            </div>
+          </div>
+        </div>
+
+          <div class="col-md-12">
+            <label for="scenesummary">Scene Summary</label>
+            <textarea #plotcomments
+                      class="form-control"
+                      placeholder="Moving the plot forward"
+                      id="scenesummary"
+                      name="scenesummary"
+                      [(ngModel)]="scene.summary"
+            ></textarea>
+          </div>
+      </form>
+    </div>
+
+
+    <!--<div class="col-md-6">-->
+    <!--  <router-outlet></router-outlet>-->
+    <!--</div>-->
+  </div>
+</div>

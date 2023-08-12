@@ -1,0 +1,8 @@
+
+
+<button class="link-primary rounded  my-2" (click)="create()" data-bs-toggle="tooltip" data-bs-placement="top" title="Create New Scene">Scenes</button>
+<div *ngIf="scenes$ | async as scenes">
+ <div class="list-group" *ngFor="let scene of scenes">
+   <a class="list-group-item list-group-item-action my-1" (click)="select(scene.id)">{{scene.name}}</a>
+ </div>
+</div>

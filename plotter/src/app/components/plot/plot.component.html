@@ -1,0 +1,63 @@
+<h2>Plot Builder</h2>
+<div class="row">
+
+<div class="col-md-6">
+<!--<div *ngIf="plot$ |async as plot">-->
+<div *ngIf="plot">
+<form class="form" #form="ngForm">
+        <div class="row g-3">
+            <div class="col-sm-4">
+            <div class=".form-floating">
+                <label for="name">Plot Name</label>
+                <input class="form-control"
+                       type="text"
+                       required
+                       id="name"
+                       placeholder="name of plot"
+                       name="name"
+                      #name
+                [(ngModel)] ="plot.name"/>
+            </div>
+        </div>
+        </div>
+
+
+
+        <div class=".form-floating">
+            <div class="col-md-4">
+                <label class="form-label" for="plot-type">Plot Type</label>
+                <select #plottype class="form-control" id="plot-type" name="plot-type" [(ngModel)]="plot.plotType">
+                    <option *ngFor="let val of plotTypes" value="{{val.name}}">
+              {{val.name}} </option>
+          </select>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label for="plotcomments">Description</label>
+            <textarea #plotcomments
+                      class="form-control"
+                      placeholder="Leave a description here"
+                      id="plotcomments"
+                      name="plotcomments"
+                      style="height: 100px" (blur)="showBuilder()"
+                      [(ngModel)]="plot.description"
+            ></textarea>
+        </div>
+        <div class="col-md-12">
+<!--            <button type="button" [routerLink]="['plotoptions']" class="btn btn-outline-default" id="default" name="subplot">Show Dashboard</button>-->
+          <div class="col-sm-12 ">
+            <label for="isPrimary" class="form-check-label my-4">Is Primary</label>
+            <input type="checkbox" class="form-check-input my-4" id="isPrimary" value="" name="isPrimary"/>
+          </div>
+
+            <button type="button" class="btn btn-outline-secondary" id="subplot" name="subplot">Add Subplot</button>
+            <button type="submit" class="btn btn-sm btn-outline-primary" id="plotter" name="plotter">Create</button>
+        </div>
+
+    </form>
+</div>
+
+<div class="col-md-6">
+  <router-outlet name="builder"></router-outlet>
+</div>
+</div>

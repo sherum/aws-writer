@@ -1,0 +1,33 @@
+<div class="col-md-6">
+<!--<div *ngIf="plot$ |async as scene">-->
+<div *ngIf="thing">
+<form class="form" #form="ngForm">
+        <div class="row">
+            <div class="col-md-6">
+            <div class=".form-floating">
+                <label for="name">Thing Name</label>
+                <input class="form-control"
+                       type="text"
+                       required
+                       id="name"
+                       placeholder="name of thing"
+                       name="name"
+                      #name
+                [(ngModel)] ="thing.name"/>
+            </div>
+        </div>
+
+          <div class="col-md-12">
+            <label for="thingfunction">Thing Function</label>
+            <textarea #plotcomments
+                      class="form-control"
+                      placeholder="raison d'être"
+                      id="thingfunction"
+                      name="thingfunction"
+                      [(ngModel)]="thing.function"
+            ></textarea>
+          </div>
+        </div>
+</form>
+</div>
+</div>

@@ -1,0 +1,121 @@
+<div class="col-md-12">
+<button class="btn btn-sm btn-outline-primary my-2" (click)="hideSummary()">Hide Detail</button>
+  <div class="shading">
+    <h3>{{story.title}}</h3>
+  </div>
+  <button type="button"
+          class="btn btn-success" (click)="save(story)">Save
+  </button>
+  <div class="container">
+    <form #form="ngForm">
+
+      <div class="row">
+        <div class="col-md-5">
+          <label for="title"
+                 class="form-label">Title</label>
+          <input
+            #title="ngModel"
+            required
+            type="text"
+            class="form-control"
+            id="title"
+            name="title"
+            aria-describedby="titlehelp"
+            [(ngModel)]="story.title"
+            [class.field-error]="form.submitted && title.invalid">
+          <div id="titlehelp"
+               class="form-text">
+            The name of your story.
+          </div>
+          <p [hidden]="title.valid || title.untouched" class="alert alert-danger">
+            Enter a story name.
+          </p>
+        </div>
+        <div class="col-md-5">
+          <label for="author"
+                 class="form-label">Author</label>
+          <input
+            #author="ngModel"
+            required
+            type="text"
+            class="form-control"
+            id="author"
+            name="author"
+            [(ngModel)]="story.author"/>
+        </div>
+
+        <div class="mb-1 col-md-6">
+          <div class="mb-1">
+            <label for="maguffin"
+                   class="form-label">Maguffin</label>
+            <textarea
+              #maguffin="ngModel"
+              required
+              type="text"
+              class="form-control"
+              id="maguffin"
+              name="maguffin"
+              aria-describedby="maguffinhelp"
+              [(ngModel)]="story.maguffin"
+              [class.field-error]="form.submitted && title.invalid"></textarea>
+            <div id="maguffinhelp"
+                 class="form-text">
+              The hook for your reader.
+            </div>
+            <p [hidden]="maguffin.valid || maguffin.untouched" class="alert alert-danger">
+              Enter a non-plot description.
+            </p>
+          </div>
+ </div>
+          <div class="row">
+
+
+            <div class="col-md-4">
+
+              <label class="form-label"
+                     for="genres">Genre</label>
+              <select #genres id="genres" name="genres" [(ngModel)]="story.genre" class="form-select">
+                <option *ngFor="let val of genre" value="{{val.name}}">
+                  {{val.name}} </option>
+              </select>
+
+            </div>
+
+
+
+          <div class="col-md-6">
+            <div class="mb-1">
+              <label for="title"
+                     class="form-label">Summary</label>
+              <textarea
+                #summary="ngModel"
+                required
+                type="text"
+                class="form-control"
+                id="summary"
+                name="summary"
+                aria-describedby="sumhelp"
+                [(ngModel)]="story.summary"
+                [class.field-error]="form.submitted && summary.invalid"></textarea>
+              <div id="sumhelp"
+                   class="form-text">
+                A high level plot description.
+              </div>
+              <p [hidden]="summary.valid || summary.untouched" class="alert alert-danger">
+                Enter the a summary of the story plot.
+              </p>
+            </div>
+             </div>
+
+          </div>
+        </div>
+
+
+
+    </form>
+  </div>
+
+</div>
+
+
+

@@ -1,0 +1,44 @@
+<h4>Location</h4>
+
+
+
+<div class="col-md-6">
+<!--<div *ngIf="plot$ |async as location">-->
+<div *ngIf="location">
+<form class="form" #form="ngForm">
+        <div class="row">
+            <div class="col-md-6">
+            <div class=".form-floating">
+                <label for="name">Location Name</label>
+                <input class="form-control"
+                       type="text"
+                       required
+                       id="name"
+                       placeholder="name of location"
+                       name="name"
+                      #name
+                [(ngModel)] ="location.name"/>
+            </div>
+        </div>
+
+          <div class="col-md-12">
+            <label for="locationnotes">Location Notes</label>
+            <textarea #plotcomments
+                      class="form-control"
+                      placeholder="location facts"
+                      id="locationnotes"
+                      name="locationnotes"
+                      [(ngModel)]="location.notes"
+            ></textarea>
+          </div>
+        </div>
+</form>
+</div>
+
+
+<div class="col-md-6">
+  <router-outlet></router-outlet>
+</div>
+</div>
+
+
