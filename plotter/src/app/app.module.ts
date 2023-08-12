@@ -31,6 +31,10 @@ import { PersonBuilderComponent } from './components/person-builder/person-build
 import { LocationBuilderComponent } from './components/location-builder/location-builder.component';
 import { StorySummaryComponent } from './components/story-summary/story-summary.component';
 import { StoryDetailComponent } from './components/story-detail/story-detail.component';
+import { ProfileComponent } from './profile/profile/profile.component';
+import { SignInComponent } from './sign-in/sign-in/sign-in.component';
+import { SignOutComponent } from './auth/sign-out/sign-out/sign-out.component';
+import { SignUpComponent } from './sign-up/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +62,11 @@ import { StoryDetailComponent } from './components/story-detail/story-detail.com
     PersonBuilderComponent,
     LocationBuilderComponent,
     StorySummaryComponent,
-    StoryDetailComponent
+    StoryDetailComponent,
+    ProfileComponent,
+    SignInComponent,
+    SignOutComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

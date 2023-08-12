@@ -18,7 +18,7 @@ import {BrowserModule} from "@angular/platform-browser";
     HttpClientModule,
     FormsModule,
     RouterModule.forChild([
-      {path:'login',component:LoginComponent}
+      {path:'floppydoodle',component:LoginComponent}
     ])
   ]
 })
