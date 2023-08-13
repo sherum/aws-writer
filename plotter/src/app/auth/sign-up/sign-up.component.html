@@ -16,7 +16,12 @@
             <div class="input-group input-group-sm">
               <input [type]="user.showPassword ? 'text' : 'password'" id="password" name="password" #password [(ngModel)]="user.password" class="form-control form-control-sm">
               <button type="button" class="btn btn-outline-secondary" (click)="user.showPassword = !user.showPassword">
-                <i class="bi" [ngClass]="{'bi-eye-fill': !user.showPassword, 'bi-eye-slash-fill': user.showPassword}"></i>
+                <span *ngIf="!user.showPassword">
+                   <i class="bi bi-eye-fill"></i>
+                </span>
+                <span *ngIf="user.showPassword">
+                <i class="bi bi-eye-slash-fill"></i>
+                </span>
               </button>
             </div>
           </div>
