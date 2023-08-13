@@ -63,7 +63,7 @@ import {AuthModule} from "./auth/auth.module";
  ],
   imports: [
     HttpClientModule,
-    UserModule,
+   // UserModule,
     AuthModule,
     AppRoutingModule,
     FormsModule
