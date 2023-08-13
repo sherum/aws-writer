@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {BackendService} from "./services/backend.service";
 import {Observable} from "rxjs";
+import {CognitoService} from "./auth/cognito.service";
 
 @Component({
   selector: 'app-root',
@@ -9,23 +10,29 @@ import {Observable} from "rxjs";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+  constructor(private router: Router,
+              private cognitoService: CognitoService) {
+    this.isAuthenticated = false;
+  }
+
+
+
   selectedStory:boolean = false;
 
-  constructor(private router: Router, private backend:BackendService) {}
+   isAuthenticated: boolean;
 
-  ngOnInit() {
-   this.router.navigate([{outlets: {details: null}}]);
-
+  public ngOnInit(): void {
+    this.cognitoService.isAuthenticated()
+    .then((success: boolean) => {
+      this.isAuthenticated = success;
+    });
   }
 
-  logOut(): void {
-    //delete session token
-    this.router.navigate(['/home']);
-  }
-
-  logIn():void{
-    //go to login page
-    this.router.navigate(['/login'])
+  public signOut(): void {
+    this.cognitoService.signOut()
+    .then(() => {
+      this.router.navigate(['/signIn']);
+    });
   }
 
 
