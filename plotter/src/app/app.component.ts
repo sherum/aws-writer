@@ -15,6 +15,8 @@ export class AppComponent implements OnInit{
     this.isAuthenticated = false;
   }
 
+  title= ""
+
 
 
   selectedStory:boolean = false;
