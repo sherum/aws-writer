@@ -1,14 +1,14 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "extends": "./tsconfig.json",
+  "extends": "/Volumes/time_machine/fast-writer-master/plotter/tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
     "types": ["node"]
   },
   "files": [
-    "plotter/src/main.ts"
+    "/Volumes/time_machine/fast-writer-master/plotter/src/main.ts"
   ],
   "include": [
-    "plotter/src/**/*.d.ts"
+    "/Volumes/time_machine/fast-writer-master/plotter/src/**/*.d.ts"
   ]
 }
