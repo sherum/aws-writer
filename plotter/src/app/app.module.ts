@@ -10,7 +10,7 @@ import { PersonsComponent } from './components/person-list/persons.component';
 import { LocationsComponent } from './components/location-list/locations.component';
 import { ThingsComponent } from './components/thing-list/things.component';
 import {HttpClientModule} from "@angular/common/http";
-import {AppRoutingModule} from "./app-routing/app-routing.module";
+import {AppRoutingModule} from "./app-routing.module";
 import { HomeComponent } from './components/home/home.component';
 import {UserModule} from "./user/user.module";
 import { StoryComponent } from './components/story/story.component';
@@ -64,7 +64,7 @@ import {AuthModule} from "./auth/auth.module";
   imports: [
     HttpClientModule,
    // UserModule,
-    AuthModule,
+   // AuthModule,
     AppRoutingModule,
     FormsModule
   ],
