@@ -1,45 +1,53 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+<div class="row justify-content-center my-5">
+  <div class="col-4">
+    <div class="card">
+       <form class="form" #form="ngForm">
+      <div class="card-body" *ngIf="!isConfirm">
 
-import { IUser, CognitoService } from '../cognito.service';
+        <div class="row">
+          <div class="col mb-2">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" #email [(ngModel)]="user.email" class="form-control form-control-sm">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mb-2">
+            <label for="password" class="form-label">Password:</label>
+            <div class="input-group input-group-sm">
+              <input [type]="user.showPassword ? 'text' : 'password'" id="password" name="password" #password [(ngModel)]="user.password" class="form-control form-control-sm">
+              <button type="button" class="btn btn-outline-secondary" (click)="user.showPassword = !user.showPassword">
+                <i class="bi" [ngClass]="{'bi-eye-fill': !user.showPassword, 'bi-eye-slash-fill': user.showPassword}"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-grid">
+            <button type="button" (click)="signUp()" class="btn btn-sm btn-success" [disabled]="loading">
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+              Sign up
+            </button>
+          </div>
+        </div>
+      </div>
 
-@Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss'],
-})
-export class SignUpComponent {
-
-  loading: boolean;
-  isConfirm: boolean;
-  user: IUser;
-
-  constructor(private router: Router,
-              private cognitoService: CognitoService) {
-    this.loading = false;
-    this.isConfirm = false;
-    this.user = {} as IUser;
-  }
-
-  public signUp(): void {
-    this.loading = true;
-    this.cognitoService.signUp(this.user)
-    .then(() => {
-      this.loading = false;
-      this.isConfirm = true;
-    }).catch(() => {
-      this.loading = false;
-    });
-  }
-
-  public confirmSignUp(): void {
-    this.loading = true;
-    this.cognitoService.confirmSignUp(this.user)
-    .then(() => {
-      this.router.navigate(['/signIn']);
-    }).catch(() => {
-      this.loading = false;
-    });
-  }
-
-}
+      <div class="card-body" *ngIf="isConfirm">
+        <div class="row">
+          <div class="col mb-2">
+            <label for="code" class="form-label">Code:</label>
+            <input type="text" id="code" name="code" #code [(ngModel)]="user.code" class="form-control form-control-sm">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-grid">
+            <button type="button" (click)="confirmSignUp()" class="btn btn-sm btn-success" [disabled]="loading">
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+       </form>
+    </div>
+  </div>
+</div>

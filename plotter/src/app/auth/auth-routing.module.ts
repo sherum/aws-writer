@@ -3,6 +3,7 @@ import {NgModule} from "@angular/core";
 import {ProfileComponent} from "./profile/profile.component";
 import {SignInComponent} from "./sign-in/sign-in.component";
 import {SignUpComponent} from "./sign-up/sign-up.component";
+import {FormsModule} from "@angular/forms";
 
 const routes: Routes = [
   {path: 'signin', component:SignInComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forChild(routes),
+    FormsModule,
   ],
   exports: [
     RouterModule,

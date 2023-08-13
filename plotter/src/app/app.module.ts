@@ -62,7 +62,6 @@ import {AuthModule} from "./auth/auth.module";
     StoryDetailComponent,
  ],
   imports: [
-    BrowserModule,
     HttpClientModule,
     UserModule,
     AuthModule,
