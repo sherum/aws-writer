@@ -9,9 +9,7 @@ import {ProfileComponent} from "./profile/profile.component";
 
 @NgModule({
   declarations: [
-    SignUpComponent,
-    SignInComponent,
-    ProfileComponent
+
   ],
   imports: [
     CommonModule,

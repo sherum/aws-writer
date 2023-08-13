@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-
 import { PlotsComponent } from './components/plot-list/plots.component';
 import { EventsComponent } from './components/event-list/events.component';
 import { ScenesComponent } from './components/scene-list/scenes.component';
@@ -31,6 +30,7 @@ import { PersonBuilderComponent } from './components/person-builder/person-build
 import { LocationBuilderComponent } from './components/location-builder/location-builder.component';
 import { StorySummaryComponent } from './components/story-summary/story-summary.component';
 import { StoryDetailComponent } from './components/story-detail/story-detail.component';
+
 // import {AuthModule} from "./auth/auth.module";
 
 @NgModule({
@@ -65,7 +65,7 @@ import { StoryDetailComponent } from './components/story-detail/story-detail.com
     BrowserModule,
     HttpClientModule,
     UserModule,
-    //AuthModule,
+    // AuthModule,
     AppRoutingModule,
     FormsModule
   ],
